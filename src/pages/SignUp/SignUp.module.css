@@ -1,0 +1,14 @@
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/netflix-backgroundimage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box {
+  position: relative;
+  padding: 3.5rem;
+}
