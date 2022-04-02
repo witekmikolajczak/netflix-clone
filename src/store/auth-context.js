@@ -1,35 +1,47 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
 import { auth } from "../firebase/firebase";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext({
+  token: "",
+  isLoggedIn: false,
+  login: (token) => {},
+  logout: () => {},
+});
 
 export const useAuth = () => {
   return useContext(AuthContext);
 };
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState();
-  const [loading, setLoading] = useState(true);
+  const initialToken = localStorage.getItem("token");
+  const [token, setToken] = useState(initialToken);
+
+  const userIsLoggedIn = !!token;
 
   const signup = (email, password) => {
     return auth.createUserWithEmailAndPassword(email, password);
   };
 
-  //run when mount component
-  useEffect(() => {
-    //create user for us
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user);
-      setLoading(true);
+  const login = (email, password) => {
+    auth.signInWithEmailAndPassword(email, password).then((userCredential) => {
+      const user = userCredential.user;
+      user.getIdToken().then((token) => {
+        setToken(token);
+        localStorage.setItem("token", token);
+      });
     });
+  };
 
-    //return method from onAuthStateChange
-    return unsubscribe;
-  }, []);
+  const logout = () => {
+    auth.signOut();
+    localStorage.removeItem("token");
+  };
 
   const contextValue = {
-    user,
+    isLoggedIn: userIsLoggedIn,
     signup,
+    login,
+    logout,
   };
 
   return (
