@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../store/auth-context";
 
 import { Button } from "../Button/Button";
@@ -14,11 +14,16 @@ export const Navbar = () => {
   };
   return (
     <header className={classes.header}>
-      <h1>Netflix</h1>
+      <h1 className={classes.h1}>Netflix</h1>
+
       <nav>
         <ul>
-          <li>Home</li>
-          <li>Profile</li>
+          <li>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
           <li>
             <Button onClick={logoutHandler}>Logout</Button>
           </li>

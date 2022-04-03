@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../store/auth-context";
 
-import Layout from "../../components/SignLayout/Layout";
+import { Box } from "../../components/Box/Box";
 import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
-import { useAuth } from "../../store/auth-context";
+
 import classes from "./Sign.module.css";
 
 const SignUp = () => {
@@ -36,7 +37,7 @@ const SignUp = () => {
   };
   return (
     <div className={classes.content}>
-      <Layout className={classes.box}>
+      <Box>
         <h1>Sign Up</h1>
         <form onSubmit={submitHandler}>
           {error && alert(error)}
@@ -61,7 +62,7 @@ const SignUp = () => {
             <h2>Sign Up</h2>
           </Button>
         </form>
-      </Layout>
+      </Box>
     </div>
   );
 };

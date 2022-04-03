@@ -1,9 +1,8 @@
 import React from "react";
 
-import classes from "./Layout.module.css";
-const Layout = (props) => {
+import classes from "./Box.module.css";
+export const Box = (props) => {
   return (
     <div className={`${classes.box} ${props.className}`}>{props.children}</div>
   );
 };
-export default Layout;

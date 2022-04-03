@@ -1,0 +1,23 @@
+.button {
+  background-color: lightskyblue;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 90%;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.h1 {
+  color: black;
+}

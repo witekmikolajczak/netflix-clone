@@ -1,5 +1,6 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
 import { auth } from "../firebase/firebase";
+import { updatePassword } from "firebase/auth";
 
 export const AuthContext = createContext({
   token: "",
@@ -34,7 +35,21 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     auth.signOut();
+    setToken(null);
     localStorage.removeItem("token");
+  };
+
+  const changePassword = (password) => {
+    const user = auth.currentUser;
+    const newPassword = password;
+    updatePassword(user, newPassword)
+      .then(() => {
+        alert("Password changed");
+      })
+      .catch(() => {
+        const err = new Error("Password must have at leat 6 characters");
+        alert(err);
+      });
   };
 
   const contextValue = {
@@ -42,6 +57,7 @@ export const AuthProvider = ({ children }) => {
     signup,
     login,
     logout,
+    changePassword,
   };
 
   return (

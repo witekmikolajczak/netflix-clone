@@ -9,8 +9,7 @@
 }
 
 .box {
-  position: relative;
-  padding: 3.5rem;
+  background: rgba(0, 0, 0, 0.85);
 }
 
 input {
@@ -24,7 +23,7 @@ input {
 .button {
   margin-top: 4rem;
 }
-h2,
+
 h1 {
   color: white;
 }
