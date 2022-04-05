@@ -11,7 +11,6 @@ import classes from "./Profile.module.css";
 export const Profile = () => {
   const { changePassword } = useAuth();
   const enteredPassword = useRef();
-  // changePassword("654321");
 
   const submitHandler = (event) => {
     event.preventDefault();

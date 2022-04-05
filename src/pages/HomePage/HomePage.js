@@ -6,25 +6,12 @@ import { Tile } from "./Tile";
 
 import classes from "./HomePage.module.css";
 
-const DUMMY_DATA = [
-  {
-    id: 1,
-    title: "nazwa",
-    description: "Opis filmu",
-  },
-];
-const tiles = () => {
-  return (
-    <div className={classes.tiles}>
-      <Tile data={DUMMY_DATA} />
-    </div>
-  );
-};
 const HomePage = () => {
   return (
     <div>
       <Navbar />
       <div className={classes["fill-container"]}>
+        <Tile />
         <img
           alt="title logo"
           className={classes["title-logo"]}
@@ -39,7 +26,6 @@ const HomePage = () => {
           <Button className={classes.button}>Odtwórz teraz</Button>
           <Button className={classes.button}>Więcej informacji</Button>
         </div>
-        {tiles()}
       </div>
     </div>
   );
