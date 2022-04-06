@@ -1,6 +1,6 @@
 import React from "react";
 
-import classes from "./StartPage.module.css";
+import classes from "./StartPage.module.scss";
 const StartPage = () => {
   return (
     <div className={classes.content}>

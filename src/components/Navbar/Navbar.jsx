@@ -4,7 +4,7 @@ import { useAuth } from "../../store/auth-context";
 
 import { Button } from "../Button/Button";
 
-import classes from "./Navbar.module.css";
+import classes from "./Navbar.module.scss";
 export const Navbar = () => {
   const { logout } = useAuth();
   const navigate = useNavigate();

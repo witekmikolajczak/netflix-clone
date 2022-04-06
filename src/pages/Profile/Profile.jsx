@@ -6,7 +6,7 @@ import { Input } from "../../components/Input/Input";
 import { Box } from "../../components/Box/Box";
 import { Card } from "../../components/Card/Card";
 
-import classes from "./Profile.module.css";
+import classes from "./Profile.module.scss";
 
 export const Profile = () => {
   const { changePassword } = useAuth();

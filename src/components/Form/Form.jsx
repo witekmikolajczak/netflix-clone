@@ -4,7 +4,7 @@ import { Button } from "../Button/Button";
 import { Input } from "../Input/Input";
 import { useAuth } from "../../store/auth-context";
 
-import classes from "./Form.module.css";
+import classes from "./Form.module.scss";
 const Form = () => {
   const { signup } = useAuth();
 

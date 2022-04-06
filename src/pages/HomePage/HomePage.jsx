@@ -3,15 +3,15 @@ import React from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Button } from "../../components/Button/Button";
 import { Tile } from "./Tile";
+import { CarouselItem, Carousel } from "../../components/Carousel/Carousel";
 
-import classes from "./HomePage.module.css";
+import classes from "./HomePage.module.scss";
 
 const HomePage = () => {
   return (
     <div>
       <Navbar />
       <div className={classes["fill-container"]}>
-        <Tile />
         <img
           alt="title logo"
           className={classes["title-logo"]}
@@ -25,6 +25,9 @@ const HomePage = () => {
         <div className={classes["buttons-container"]}>
           <Button className={classes.button}>Odtwórz teraz</Button>
           <Button className={classes.button}>Więcej informacji</Button>
+        </div>
+        <div className={classes.movieList}>
+          <Tile />
         </div>
       </div>
     </div>
