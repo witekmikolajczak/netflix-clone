@@ -26,9 +26,16 @@ const HomePage = () => {
           <Button className={classes.button}>Odtwórz teraz</Button>
           <Button className={classes.button}>Więcej informacji</Button>
         </div>
-        <div className={classes.movieList}>
-          <Tile />
-        </div>
+        <h1>Netflix Originals</h1>
+        <Tile />
+      </div>
+      <div className={`${classes.contentContainer} `}>
+        <h1>Popular</h1>
+        <Tile />
+        <h1>History</h1>
+        <Tile />
+        <h1>Sport</h1>
+        <Tile />
       </div>
     </div>
   );

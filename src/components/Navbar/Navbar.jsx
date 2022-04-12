@@ -5,6 +5,8 @@ import { useAuth } from "../../store/auth-context";
 import { Button } from "../Button/Button";
 
 import classes from "./Navbar.module.scss";
+import profile from "../../assets/netflix-backgroundimage.png";
+
 export const Navbar = () => {
   const { logout } = useAuth();
   const navigate = useNavigate();
@@ -27,6 +29,9 @@ export const Navbar = () => {
           <li>
             <Button onClick={logoutHandler}>Logout</Button>
           </li>
+          <div className={classes.image}>
+            <img />
+          </div>
         </ul>
       </nav>
     </header>

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useMovie } from "../../hooks/useMovie";
 
-import { Carousel, CarouselItem } from "../../components/Carousel/Carousel";
+import { MovieDetails } from "./MovieDetails/MovieDetails";
 
 import classes from "./Tile.module.scss";
 
-export const Tile = () => {
+const IMAGE_URL = `https://image.tmdb.org/t/p/w300`;
+export const Tile = (props) => {
   const [movieData, setMovieData] = useState();
-  const [loading, setLoading] = useState(false);
+  const [showMovieDetails, setShowMovieDetails] = useState(false);
   const movie = useMovie();
 
   useEffect(() => {
@@ -15,7 +16,7 @@ export const Tile = () => {
       const data = value.results.map((item) => ({
         id: item.id,
         title: item.title,
-        image: item.backdrop_path,
+        image: item.poster_path,
         description: item.overview,
         popularity: item.popularity,
         vote_avg: item.vote_average,
@@ -24,13 +25,20 @@ export const Tile = () => {
       setMovieData(data);
     });
   }, []);
-  console.log(movieData);
+
+  console.log(showMovieDetails);
   return (
-    <div className={classes.wrapper}>
+    <div
+      className={classes.container}
+      onClick={() => setShowMovieDetails(!showMovieDetails)}
+    >
+      {showMovieDetails && (
+        <MovieDetails onClick={() => setShowMovieDetails(true)} />
+      )}
       {movieData !== undefined &&
         movieData.map((data) => (
-          <div className={classes.tile}>
-            <h1>{data.title}</h1>
+          <div className={classes.item} key={data.id}>
+            <img src={`${IMAGE_URL}${data.image}`} alt="a" />
           </div>
         ))}
     </div>

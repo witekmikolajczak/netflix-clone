@@ -11,11 +11,23 @@ import classes from "./Profile.module.scss";
 export const Profile = () => {
   const { changePassword } = useAuth();
   const enteredPassword = useRef();
+  const repeatEnteredPassword = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
-    changePassword(enteredPassword.current.value);
+    if (
+      enteredPassword.current.value === repeatEnteredPassword.current.value &&
+      enteredPassword.current.value.length >= 6
+    ) {
+      changePassword(enteredPassword.current.value);
+      alert("Password changed");
+    } else {
+      alert(
+        "Password is not this same. Passwprd must have at least 6 characters"
+      );
+    }
     enteredPassword.current.value = "";
+    repeatEnteredPassword.current.value = "";
   };
 
   return (
@@ -29,6 +41,12 @@ export const Profile = () => {
               placeholder="Password"
               name="password"
               ref={enteredPassword}
+            />
+            <Input
+              type="password"
+              placeholder="Repeat password"
+              name="password"
+              ref={repeatEnteredPassword}
             />
             <Button className={classes.button}>Submit</Button>
           </form>
