@@ -59,7 +59,7 @@ const SignUp = () => {
           </Link>
 
           <Button className={classes.button} type="submit" disabled={loading}>
-            <h2>Sign Up</h2>
+            Sign In
           </Button>
         </form>
       </Box>

@@ -1,29 +1,33 @@
 import React from "react";
 import { createPortal } from "react-dom";
 
-import classes from "./MovieDetails.scss";
+import classes from "./MovieDetails.module.scss";
 
 const Backdrop = (props) => {
-  console.log(props.showMovieDetails);
+  console.log(props.onClick);
+  return <div className={classes.backdrop} onClick={props.onClick}></div>;
+};
+
+const MovieModal = ({ movieData, ...props }) => {
+  console.log(movieData);
   return (
-    <div className={classes.backdrop} onClick={props.showMovieDetails}></div>
+    <div className={classes.container} onClick={props.onClick}>
+      {movieData.map((data) => (
+        <p>{data.title}</p>
+      ))}
+    </div>
   );
 };
 
-const MovieModal = (props) => {
-  return <div className={classes.container}></div>;
-};
-
-export const MovieDetails = ({ showMovieDetails }) => {
-  console.log("clicked");
+export const MovieDetails = (props) => {
   return (
     <React.Fragment>
       {createPortal(
-        <Backdrop showMovieDetails={showMovieDetails} />,
+        <Backdrop onClick={props.onClick} />,
         document.getElementById("backdrop-root")
       )}
       {createPortal(
-        <MovieModal onClick={showMovieDetails} />,
+        <MovieModal onClick={props.onClick} movieData={props.movieData} />,
         document.getElementById("overlay-root")
       )}
     </React.Fragment>

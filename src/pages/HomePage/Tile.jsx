@@ -25,22 +25,23 @@ export const Tile = (props) => {
       setMovieData(data);
     });
   }, []);
-
-  console.log(showMovieDetails);
   return (
     <div
       className={classes.container}
       onClick={() => setShowMovieDetails(!showMovieDetails)}
     >
-      {showMovieDetails && (
-        <MovieDetails onClick={() => setShowMovieDetails(true)} />
-      )}
       {movieData !== undefined &&
         movieData.map((data) => (
           <div className={classes.item} key={data.id}>
             <img src={`${IMAGE_URL}${data.image}`} alt="a" />
           </div>
         ))}
+      {showMovieDetails && (
+          <MovieDetails
+              onClick={() => setShowMovieDetails(true)}
+              movieData={movieData}
+          />
+      )}
     </div>
   );
 };

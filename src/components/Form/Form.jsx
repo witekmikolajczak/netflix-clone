@@ -5,7 +5,9 @@ import { Input } from "../Input/Input";
 import { useAuth } from "../../store/auth-context";
 
 import classes from "./Form.module.scss";
-const Form = () => {
+
+
+export const Form = () => {
   const { signup } = useAuth();
 
   const enteredPasswordConfirm = useRef();
@@ -54,4 +56,3 @@ const Form = () => {
     </form>
   );
 };
-export default Form;

@@ -1,5 +1,17 @@
 .content {
   width: 100wh;
   height: 100vh;
-  background-color: black;
+  background-color: lightgray;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+
+  .box{
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  h1 {
+    margin: 0;
+  }
 }

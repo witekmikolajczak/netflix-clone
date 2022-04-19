@@ -49,7 +49,7 @@ const SignIn = () => {
             <p>Create new account</p>
           </Link>
           <Button className={classes.button} type="submit" disabled={loading}>
-            <h2>Sign In</h2>
+            Sign In
           </Button>
         </form>
       </Box>

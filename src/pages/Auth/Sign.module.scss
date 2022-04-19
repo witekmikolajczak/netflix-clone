@@ -6,6 +6,11 @@
   background-image: url("../../assets/netflix-backgroundimage.png");
   background-repeat: no-repeat;
   background-size: cover;
+
+  h1 {
+  color: white;
+  }
+
 }
 
 .box {
@@ -13,21 +18,7 @@
   border-radius: 10px;
 }
 
-input {
-  background-color: darkgray;
-  height: 3rem;
-  width: 100%;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-}
 
-.button {
-  margin-top: 4rem;
-}
-
-h1 {
-  color: white;
-}
 
 p {
   color: red;

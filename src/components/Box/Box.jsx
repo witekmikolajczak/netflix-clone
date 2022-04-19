@@ -1,5 +1,4 @@
 import React from "react";
-
 import classes from "./Box.module.scss";
 export const Box = (props) => {
   return (

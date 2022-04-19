@@ -1,11 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import { Input } from "../../components/Input/Input";
+import { Box } from "../../components/Box/Box";
+import { Button } from "../../components/Button/Button";
 
 import classes from "./StartPage.module.scss";
 const StartPage = () => {
   return (
-    <div className={classes.content}>
-      <h1>Welcom to netflix clone app</h1>
-      <h2>Please log in</h2>
+    <div className={classes.wrapper}>
+      <div className={classes.content}>
+        <Box className={classes.box}>
+          <form>
+            <Input type='text' placeholder='Email'/>
+            <Button>Submit</Button>
+          </form>
+          <Link to='/login'>
+            <p>Log in</p>
+          </Link>
+          
+        </Box>
+      </div>
     </div>
   );
 };
