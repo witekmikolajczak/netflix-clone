@@ -1,20 +1,31 @@
 .container {
   position: fixed;
-  top: 30vh;
-  left: 10%;
-  width: 80%;
-  height: 500px;
+  top: 10vh;
+  background: transparent;
+  width: 100%;
+  margin: 20px;
+  padding: 20px;
   z-index: 100;
   overflow-x: scroll;
-  background-color: rgba(233, 220, 220, 0.8);
-  display: flex;
   padding-left: 20px;
   border-radius: 10px;
-  align-items: center;
-
+  display: flex;
+  justify-content: center;
   &::-webkit-scrollbar {
     display: none;
   }
+  .wrapper {
+    width: 50%;
+    text-align: center;
+
+    p{
+      text-decoration: none;
+      color: #6f6b6b;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
 }
 
 .backdrop {
@@ -24,6 +35,6 @@
   width: 100vw;
   height: 100vh;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.55);
   cursor: pointer;
 }
