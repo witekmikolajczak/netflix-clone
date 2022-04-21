@@ -5,6 +5,7 @@ import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
 import { Box } from "../../components/Box/Box";
 import { Card } from "../../components/Card/Card";
+import {UploadImage} from "../../components/UploadImage/UploadImage";
 
 import classes from "./Profile.module.scss";
 
@@ -32,26 +33,30 @@ export const Profile = () => {
 
   return (
     <Card>
-      <div className={classes.content}>
-        <Box className={classes.box}>
+      <div className={classes.wrapper}>
+        <div className={classes.changeImageProfile}>
+          <UploadImage/>
+        </div>
+        <div className={classes.content}><Box className={classes.box}>
           <h1 className={classes.h1}>Change Password</h1>
           <form onSubmit={submitHandler}>
             <Input
-              type="password"
-              placeholder="Password"
-              name="password"
-              ref={enteredPassword}
+                type="password"
+                placeholder="Password"
+                name="password"
+                ref={enteredPassword}
             />
             <Input
-              type="password"
-              placeholder="Repeat password"
-              name="password"
-              ref={repeatEnteredPassword}
+                type="password"
+                placeholder="Repeat password"
+                name="password"
+                ref={repeatEnteredPassword}
             />
             <Button className={classes.button}>Submit</Button>
           </form>
-        </Box>
+        </Box></div>
       </div>
+
     </Card>
   );
 };
