@@ -27,11 +27,8 @@ export const Navbar = () => {
             <Link to="/profile">Profile</Link>
           </li>
           <li>
-            <Button onClick={logoutHandler}>Logout</Button>
+            <Button className={classes.button} onClick={logoutHandler}>Logout</Button>
           </li>
-          <div className={classes.image}>
-            <img />
-          </div>
         </ul>
       </nav>
     </header>
