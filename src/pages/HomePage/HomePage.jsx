@@ -3,7 +3,7 @@ import React from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Button } from "../../components/Button/Button";
 import { Tile } from "./Tile";
-import { CarouselItem, Carousel } from "../../components/Carousel/Carousel";
+
 
 import classes from "./HomePage.module.scss";
 

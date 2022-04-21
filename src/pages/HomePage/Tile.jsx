@@ -3,12 +3,16 @@ import { useMovie } from "../../hooks/useMovie";
 
 import { MovieDetails } from "./MovieDetails/MovieDetails";
 
+import {IMAGE_URL} from "../../hooks/useMovie";
+
 import classes from "./Tile.module.scss";
 
-const IMAGE_URL = `https://image.tmdb.org/t/p/w300`;
+
 export const Tile = (props) => {
   const [movieData, setMovieData] = useState();
   const [showMovieDetails, setShowMovieDetails] = useState(false);
+  const [movieClick, setMovieClick] = useState()
+
   const movie = useMovie();
 
   useEffect(() => {
@@ -25,6 +29,7 @@ export const Tile = (props) => {
       setMovieData(data);
     });
   }, []);
+
   return (
     <div
       className={classes.container}
@@ -32,16 +37,21 @@ export const Tile = (props) => {
     >
       {movieData !== undefined &&
         movieData.map((data) => (
-          <div className={classes.item} key={data.id}>
+          <div className={classes.item} key={data.id} onClick={()=> setMovieClick(data)}>
             <img src={`${IMAGE_URL}${data.image}`} alt="a" />
+            {showMovieDetails && <MovieDetails
+                onClick={() => setShowMovieDetails(true)}
+                movieData={movieClick}
+            />}
+
           </div>
         ))}
-      {showMovieDetails && (
-          <MovieDetails
-              onClick={() => setShowMovieDetails(true)}
-              movieData={movieData}
-          />
-      )}
+      {/*{showMovieDetails && (*/}
+      {/*    <MovieDetails*/}
+      {/*        onClick={() => setShowMovieDetails(true)}*/}
+      {/*        movieData={movieData}*/}
+      {/*    />*/}
+      {/*)}*/}
     </div>
   );
 };
