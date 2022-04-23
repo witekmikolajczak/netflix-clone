@@ -20,7 +20,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## Home Page:
 ### To render movie image, description etc. I used https://www.themoviedb.org/
 ![image](https://user-images.githubusercontent.com/61797939/164889538-6196d9da-88be-4c9b-b17e-291996a1acdf.png)
+![image](https://user-images.githubusercontent.com/61797939/164890795-b26022e5-b87b-4f70-8523-d7c973b27973.png)
+
 
 ## Profile Page:
 ### Here you can update your profile picture and change your password
-![image](https://user-images.githubusercontent.com/61797939/164889605-a3b3b0a2-4f5a-49ec-bff6-f607dd57e263.png)
+
